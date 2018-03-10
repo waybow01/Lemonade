@@ -14,6 +14,7 @@
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
 
+
 template<class Key, class T> class SwappedMap {
 private:
   struct Descriptor {
@@ -182,7 +183,7 @@ template<class Key, class T> bool SwappedMap<Key, T>::open(const std::string& it
 }
 
 template<class Key, class T> void SwappedMap<Key, T>::close() {
-  std::cout << "SwappedMap cache hits: " << m_cacheHits << ", misses: " << m_cacheMisses << " (" << std::fixed << std::setprecision(2) << static_cast<double>(m_cacheMisses) / (m_cacheHits + m_cacheMisses) * 100 << "%)" << std::endl;
+  //  std::cout << "SwappedMap cache hits: " << m_cacheHits << ", misses: " << m_cacheMisses << " (" << std::fixed << std::setprecision(2) << static_cast<double>(m_cacheMisses) / (m_cacheHits + m_cacheMisses) * 100 << "%)" << std::endl;
 }
 
 template<class Key, class T> uint64_t SwappedMap<Key, T>::size() const {
